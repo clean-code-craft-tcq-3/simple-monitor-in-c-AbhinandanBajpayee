@@ -4,5 +4,5 @@ typedef int Std_ReturnType;
 
 int isTemperatureInRange(float temperature);
 int isSocInRange(float soc);
-int isSocInRange(float chargeRate);
+int isChargeRateInRange(float chargeRate);
 int batteryIsOk(float temperature, float soc, float chargeRate);
