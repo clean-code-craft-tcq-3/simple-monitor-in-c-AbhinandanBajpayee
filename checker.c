@@ -24,7 +24,7 @@ int isSocInRange(float soc)
     return RetVal;
 }
 
-int isSocInRange(float chargeRate)
+int isChargeRateInRange(float chargeRate)
 {
     Std_ReturnType RetVal = E_OK;
     if(chargeRate > 0.8) 
