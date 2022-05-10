@@ -8,8 +8,9 @@ int isTemperatureInRange(float temperature)
     if(temperature < 0 || temperature > 45) 
     {
       printf("Temperature out of range!\n");
-      return E_NOT_OK;
+      RetVal = E_NOT_OK;
     }
+    return RetVal;
 }
 
 int isSocInRange(float soc)
@@ -18,8 +19,9 @@ int isSocInRange(float soc)
     if(soc < 20 || soc > 80) 
     {
       printf("State of Charge out of range!\n");
-      return E_NOT_OK;
+      RetVal = E_NOT_OK;
     }
+    return RetVal;
 }
 
 int isSocInRange(float chargeRate)
@@ -28,8 +30,9 @@ int isSocInRange(float chargeRate)
     if(chargeRate > 0.8) 
     {
       printf("Charge Rate out of range!\n");
-      return E_NOT_OK;
+      RetVal = E_NOT_OK;
     }
+    return RetVal;
 }
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
