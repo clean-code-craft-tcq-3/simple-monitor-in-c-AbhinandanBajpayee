@@ -1,4 +1,4 @@
-typedef uint8 Std_ReturnType;
+typedef int Std_ReturnType;
 #define E_OK 0x01u
 #define E_NOT_OK 0x00u
 
