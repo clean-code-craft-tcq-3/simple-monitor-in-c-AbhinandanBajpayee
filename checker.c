@@ -39,7 +39,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
   Std_ReturnType RetVal = E_OK;
   RetVal = isTemperatureInRange(temperature);
   RetVal |= isSocInRange(soc);
-  RetVal |= isSocInRange(chargeRate);
+  RetVal |= isChargeRateInRange(chargeRate);
   return RetVal;
 }
 
