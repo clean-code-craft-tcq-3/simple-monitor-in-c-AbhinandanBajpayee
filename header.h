@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <assert.h>
+
 typedef int Std_ReturnType;
 #define E_OK 0x00u
 #define E_NOT_OK 0x01u
