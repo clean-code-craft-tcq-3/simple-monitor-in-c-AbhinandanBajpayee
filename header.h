@@ -1,6 +1,6 @@
 typedef int Std_ReturnType;
-#define E_OK 0x01u
-#define E_NOT_OK 0x00u
+#define E_OK 0x00u
+#define E_NOT_OK 0x01u
 
 int isTemperatureInRange(float temperature);
 int isSocInRange(float soc);
