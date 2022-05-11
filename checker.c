@@ -1,21 +1,18 @@
-#include <stdio.h>
-#include <assert.h>
+#include "header.h"
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    printf("Temperature out of range!\n");
-    return 0;
-  } else if(soc < 20 || soc > 80) {
-    printf("State of Charge out of range!\n");
-    return 0;
-  } else if(chargeRate > 0.8) {
-    printf("Charge Rate out of range!\n");
-    return 0;
-  }
-  return 1;
+  Std_ReturnType RetVal = E_OK;
+  RetVal = isTemperatureInRange(temperature);
+  RetVal |= isSocInRange(soc);
+  RetVal |= isChargeRateInRange(chargeRate);
+  return RetVal;
 }
 
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+  assert(batteryIsOk(25, 70, 0.7) == E_OK);
+  assert(batteryIsOk(50, 85, 0) == E_NOT_OK);
+  assert(batteryIsOk(60, 25, 0.7) == E_NOT_OK);
+  assert(batteryIsOk(25, 85, 0) == E_NOT_OK);
+  assert(batteryIsOk(25, 65, 1) == E_NOT_OK);
+  assert(batteryIsOk(60, 90, 1) == E_NOT_OK);
 }
